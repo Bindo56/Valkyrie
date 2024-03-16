@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b6073216b37fe64e85a886144a393ae, type: 3}
+  m_Name: HealSword
+  m_EditorClassIdentifier: 
+  Type: 1
+  itemName: HealSword
+  icon: {fileID: 1550232162, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  DropChance: 12.7
+  equipmentType: 0
+  effects:
+  - {fileID: 11400000, guid: 5185527d60ae6064aa9a2938bcddc576, type: 2}
+  strenght: 0
+  agility: 0
+  intelligence: 0
+  vitality: 0
+  damage: 10
+  critChance: 9
+  critPower: 0
+  maxHealth: 0
+  armour: 0
+  evasion: 0
+  magicResistance: 0
+  fireDamage: 0
+  iceDamage: 0
+  lightingDamage: 0
