@@ -10,8 +10,8 @@ public class Clone_Skill : Skill
     [SerializeField] bool canAttack;
 
 
-    [SerializeField] bool createCloneOnDashStart;
-    [SerializeField] bool createClineOffDashOver;
+   /* [SerializeField] bool createCloneOnDashStart;
+    [SerializeField] bool createClineOffDashOver;*/
     [SerializeField] bool canDuplicateClone;
     [SerializeField] bool createCloneOnCounterAttack;
     [SerializeField] float chanceToCreateClone; //chanceToDuplicateMoreThen2clone
@@ -33,26 +33,6 @@ public class Clone_Skill : Skill
         GameObject newClone = Instantiate(clonePrefabs);
 
         newClone.GetComponent<Clone_Skill_Controller>().SetupClone(_clonePosition,cloneDuration,canAttack, _offset , FindClosestEnemy(newClone.transform),canDuplicateClone,chanceToCreateClone,player);
-    }
-
-
-
-     public void CreateCloneOnDashStart()
-    {
-        if(createCloneOnDashStart)
-        {
-            CreatClone(player.transform, Vector3.zero);
-        }
-
-    }
-
-    public void CreateClineOffDashOver()
-    {
-
-        if (createClineOffDashOver)
-        {
-            CreatClone(player.transform , Vector3.zero);
-        }
     }
 
     public void CreateCloneOnCounterAttack(Transform _enemyTransform)

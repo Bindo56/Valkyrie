@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 1
   itemName: Saviour Amour
-  icon: {fileID: -1547736094, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemIcon: {fileID: -1547736094, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   DropChance: 9.3
   equipmentType: 1
+  crafthingMatrials:
+  - data: {fileID: 11400000, guid: f9ccb2a95b0e959419df351101ec5984, type: 2}
+    stackSize: 1
   effects:
   - {fileID: 11400000, guid: 1eb85f2934f7f7c4f8665a45b86ec22d, type: 2}
   itemCooldown: 5

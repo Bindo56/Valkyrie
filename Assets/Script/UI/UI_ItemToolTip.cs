@@ -24,7 +24,7 @@ public class UI_ItemToolTip : MonoBehaviour
             return;
         }
 
-        itemNameText.text = item.itemName;
+        itemNameText.text = item.itemName.ToString(); //addedstring
         itemTypeText.text = item.equipmentType.ToString();
         itemDescription.text = item.GetDescription();
 

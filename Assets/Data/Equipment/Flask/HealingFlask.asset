@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 1
   itemName: HealingFlask
-  icon: {fileID: 1923829048, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemIcon: {fileID: -1095196993, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   DropChance: 0
   equipmentType: 3
+  crafthingMatrials:
+  - data: {fileID: 11400000, guid: c9c6df54a03dfa2498df84df80b5b6e1, type: 2}
+    stackSize: 1
   effects:
   - {fileID: 11400000, guid: e65004446fc51914e97b6e6911dc7392, type: 2}
   itemCooldown: 5

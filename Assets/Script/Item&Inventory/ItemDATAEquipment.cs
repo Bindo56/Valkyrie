@@ -23,8 +23,11 @@ public class ItemDATAEquipment : ItemData
     [Header("Craft requirements")]
     public List<InventoryItem> crafthingMatrials;
 
+    [Header("Effects")]
     public ItemEffects[] effects;
     public float itemCooldown;
+    [TextArea]
+    public string effectDes;
 
     [Header("Major Stat")]
     public int strenght; 
@@ -140,6 +143,12 @@ public class ItemDATAEquipment : ItemData
                 sb.AppendLine();
                 sb.AppendLine("");
             }
+        }
+
+        if(effectDes.Length > 0)
+        {
+            sb.AppendLine();
+            sb.AppendLine(effectDes.ToString());
         }
 
 

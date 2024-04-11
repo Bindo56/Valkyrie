@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 1
   itemName: Strenght
-  icon: {fileID: 107570763, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemIcon: {fileID: -2077380196, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   DropChance: 10.7
   equipmentType: 3
+  crafthingMatrials:
+  - data: {fileID: 11400000, guid: f9ccb2a95b0e959419df351101ec5984, type: 2}
+    stackSize: 3
   effects:
   - {fileID: 11400000, guid: 2ee5f25c1e4a6c640802f407d02efd5e, type: 2}
   itemCooldown: 0

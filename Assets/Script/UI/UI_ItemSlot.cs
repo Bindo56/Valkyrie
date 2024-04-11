@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler,IPointerEnterHandler,IPointerExitHandler
+public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler,IPointerEnterHandler,IPointerExitHandler,IPointerMoveHandler
 {
   [SerializeField] protected Image itemImage;
     [SerializeField] protected TextMeshProUGUI itemText;
@@ -36,7 +36,7 @@ public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler,IPointerEnterHand
 
         if (item != null)
         {
-            itemImage.sprite = item.data.icon;
+            itemImage.sprite = item.data.itemIcon;
 
             if (item.stackSize > 1)
             {
@@ -84,8 +84,10 @@ public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler,IPointerEnterHand
         if (item.data.Type == ItemType.Equipment)
             Inventory.instance.EquipItem(item.data);
 
-        else if (item.data.Type != ItemType.Equipment)
-            return;
+        ui.itemToolTip.HideToolTip();   
+
+       /* else if (item.data.Type != ItemType.Equipment)
+            return;*/
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -101,6 +103,8 @@ public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler,IPointerEnterHand
        // Debug.Log("Show");
     }
 
+    
+
     public void OnPointerExit(PointerEventData eventData)
     {
         if(item == null) 
@@ -111,5 +115,12 @@ public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler,IPointerEnterHand
         ui.itemToolTip.HideToolTip();
     }
 
-  
+    public void OnPointerMove(PointerEventData eventData)
+    {
+/*        if (item == null)
+        {
+            return;
+        }
+        ui.itemToolTip.ShowToolTip(item.data as ItemDATAEquipment);*/
+    }
 }

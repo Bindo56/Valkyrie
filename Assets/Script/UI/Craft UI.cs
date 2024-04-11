@@ -23,16 +23,21 @@ public class CraftUI : UI_ItemSlot
 
         item.data = _data;
 
-        itemImage.sprite = _data.icon;
+        itemImage.sprite = _data.itemIcon;
         itemText.text = _data.itemName;
+
+        if (itemText.text.Length < 7)
+        {
+            itemText.fontSize = itemText.fontSize * .9f;
+        }
+        else
+            itemText.fontSize = 10;
 
 
     }
 
     public override void OnPointerDown(PointerEventData eventData)
     {
-        ItemDATAEquipment craftData = item.data as ItemDATAEquipment;
-
-        Inventory.instance.CanCraft(craftData, craftData.crafthingMatrials);
+        ui.craftWindow.SetupCraftWindow(item.data as ItemDATAEquipment);
     }
 }

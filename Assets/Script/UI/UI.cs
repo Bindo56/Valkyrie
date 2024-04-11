@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UI : MonoBehaviour
 {
+  
+
     [SerializeField] GameObject characaterUI;
     [SerializeField] GameObject skillTreeUI;
     [SerializeField] GameObject CraftUI;
     [SerializeField] GameObject optionUI;
 
 
-
+    public UI_Skilltree_Tooltip skillTooltip;
     public UI_ItemToolTip itemToolTip;
     public UI_StatToolTip statToolTip;
+    public UI_Craft_Window craftWindow;
 
 
     // Start is called before the first frame update
@@ -75,5 +79,5 @@ public class UI : MonoBehaviour
 
     }
 
-
+   
 }

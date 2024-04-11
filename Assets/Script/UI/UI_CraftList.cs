@@ -10,35 +10,24 @@ public class UI_CraftList : MonoBehaviour , IPointerDownHandler
 
 
     [SerializeField] List <ItemDATAEquipment> craftEquipment;
-    [SerializeField] List<CraftUI> craftSlot;    
+      
     // Start is called before the first frame update
     void Start()
     {
-        AssignCraftSlot();
+
+        transform.parent.GetChild(0).GetComponent<UI_CraftList>().SetupCraftList();
+        SetupDefaultCraftWindow();
     }
-
-
-    private void AssignCraftSlot()
-    {
-        for (int i = 0; i < craftSlotParent.childCount; i++)
-        {
-            craftSlot.Add(craftSlotParent.GetChild(i).GetComponent<CraftUI>());
-
-
-
-        }
-    }
-
 
     public void SetupCraftList()
     {
-        for (int i = 0; i < craftSlot.Count; i++)
+        for (int i = 0; i < craftSlotParent.childCount; i++)
         {
-            Destroy(craftSlot[i].gameObject);
+          Destroy(craftSlotParent.GetChild(i).gameObject);
 
         }
 
-        craftSlot = new List<CraftUI>();
+      //  craftSlot = new List<CraftUI>();
 
         for (int i = 0; i < craftEquipment.Count; i++)
         {
@@ -54,4 +43,13 @@ public class UI_CraftList : MonoBehaviour , IPointerDownHandler
     {
        SetupCraftList();
     }
+
+    public void SetupDefaultCraftWindow()
+    {
+        if (craftEquipment[0] != null)
+        {
+            GetComponentInParent<UI>().craftWindow.SetupCraftWindow(craftEquipment[0]);
+        }
+    }
+
 }

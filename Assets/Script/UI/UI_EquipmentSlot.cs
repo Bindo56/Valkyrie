@@ -22,6 +22,8 @@ public class UI_EquipmentSlot : UI_ItemSlot
 
         Inventory.instance.UnEquipItem(item.data as ItemDATAEquipment);
         Inventory.instance.Additem(item.data as ItemDATAEquipment);
+
+        ui.itemToolTip.HideToolTip();
         CleanUpSlot();
     }
 

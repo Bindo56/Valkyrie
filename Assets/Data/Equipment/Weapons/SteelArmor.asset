@@ -14,9 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 1
   itemName: SteelArmor
-  icon: {fileID: -1581127718, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemIcon: {fileID: -1547736094, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   DropChance: 24.9
   equipmentType: 1
+  crafthingMatrials:
+  - data: {fileID: 11400000, guid: c9c6df54a03dfa2498df84df80b5b6e1, type: 2}
+    stackSize: 2
+  effects: []
+  itemCooldown: 0
   strenght: 0
   agility: 0
   intelligence: 0

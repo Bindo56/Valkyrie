@@ -9,6 +9,8 @@ public class UI_Craft_Window : MonoBehaviour
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI itemDescription;
     [SerializeField] Image itemIcon;
+    [SerializeField] Button craftButton;
+
 
     [SerializeField] Image[] materialImage;
 
@@ -17,6 +19,10 @@ public class UI_Craft_Window : MonoBehaviour
 
     public void SetupCraftWindow(ItemDATAEquipment _date)
     {
+
+        craftButton.onClick.RemoveAllListeners();
+
+
         for (int i = 0; i < materialImage.Length; i++)
         {
             materialImage[i].color = Color.clear;
@@ -43,8 +49,11 @@ public class UI_Craft_Window : MonoBehaviour
 
         }
         
+            itemIcon.sprite = _date.itemIcon;
+            itemName.text = _date.itemName;
+            itemDescription.text = _date.GetDescription();
 
-        
+        craftButton.onClick.AddListener(() => Inventory.instance.CanCraft(_date,_date.crafthingMatrials));
 
 
 
