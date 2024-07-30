@@ -35,15 +35,15 @@ public class Clone_Skill : Skill
         newClone.GetComponent<Clone_Skill_Controller>().SetupClone(_clonePosition,cloneDuration,canAttack, _offset , FindClosestEnemy(newClone.transform),canDuplicateClone,chanceToCreateClone,player);
     }
 
-    public void CreateCloneOnCounterAttack(Transform _enemyTransform)
+    public void CreateCloneWithDelay(Transform _enemyTransform)
     {
-        if(createCloneOnCounterAttack)
-        {
-            StartCoroutine(createCloneWithDelay(_enemyTransform, new Vector3(2 * player.facingDir, 0)));
-        }
+        
+        
+            StartCoroutine(CloneDelayCorotine(_enemyTransform, new Vector3(2 * player.facingDir, 0)));
+        
     }
 
-    private IEnumerator createCloneWithDelay(Transform _enemyTransform , Vector3 _offset)
+    private IEnumerator CloneDelayCorotine(Transform _enemyTransform , Vector3 _offset)
     {
         yield return new WaitForSeconds(.4f);
             CreatClone(_enemyTransform, _offset);

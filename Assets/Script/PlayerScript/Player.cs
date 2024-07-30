@@ -100,7 +100,7 @@ public class Player : Entity
 
         dashInputCheck();
 
-        if(Input.GetKeyDown(KeyCode.G)) 
+        if(Input.GetKeyDown(KeyCode.G)  &&  skill.crystal_Skill.crystalUnlocked) 
         {
             skill.crystal_Skill.CanUseSkill();
         }

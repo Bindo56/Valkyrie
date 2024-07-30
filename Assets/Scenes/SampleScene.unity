@@ -13451,6 +13451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1296448562}
   - component: {fileID: 1296448561}
+  - component: {fileID: 1296448567}
   - component: {fileID: 1296448560}
   - component: {fileID: 1296448563}
   - component: {fileID: 1296448564}
@@ -13525,8 +13526,6 @@ MonoBehaviour:
   clonePrefabs: {fileID: 868450854021530280, guid: e35b68bc16d74ca4babd6a8cc96ebc6e, type: 3}
   cloneDuration: 1.5
   canAttack: 0
-  createCloneOnDashStart: 0
-  createClineOffDashOver: 0
   canDuplicateClone: 0
   createCloneOnCounterAttack: 0
   chanceToCreateClone: 35
@@ -13598,10 +13597,15 @@ MonoBehaviour:
   cooldown: 0
   crystalPrefab: {fileID: 9166582873366432889, guid: 40f346c1d2f7c6c458e1f6fa3faa9ea1, type: 3}
   crystalDur: 5
+  explosiveCrystalUnlockBtn: {fileID: 1236985611}
   canExplode: 1
+  unlockCloneInsteadBtn: {fileID: 1202020772}
   createCloneInsteadOfCrystal: 1
+  unlockCrystalBtn: {fileID: 339621522}
+  movingCrystalUnlockBtn: {fileID: 0}
   canMove: 1
   moveSpeed: 5
+  multiCrystalUnlockBtn: {fileID: 95955013}
   canUseMultiCrystal: 1
   amountOfGem: 3
   coolDowngem: 2
@@ -13610,6 +13614,26 @@ MonoBehaviour:
   - {fileID: 9166582873366432889, guid: 40f346c1d2f7c6c458e1f6fa3faa9ea1, type: 3}
   - {fileID: 9166582873366432889, guid: 40f346c1d2f7c6c458e1f6fa3faa9ea1, type: 3}
   - {fileID: 9166582873366432889, guid: 40f346c1d2f7c6c458e1f6fa3faa9ea1, type: 3}
+--- !u!114 &1296448567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296448559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1ee873a3100da4cb6e43e8cdde0f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  parryUnlockBtn: {fileID: 1637701531}
+  parryUnlocked: 0
+  restoreUnlockBtn: {fileID: 1449767864}
+  retoreHealthPer: 0.05
+  restoreUnlocked: 0
+  parryWithMirageUnlockBtn: {fileID: 2120820055}
+  parryWithMirageUnlocked: 0
 --- !u!1001 &1299261943
 PrefabInstance:
   m_ObjectHideFlags: 0

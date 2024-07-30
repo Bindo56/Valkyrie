@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class crystal_skill : Skill
 {
@@ -8,22 +9,101 @@ public class crystal_skill : Skill
     GameObject currentCrystal;
     [SerializeField] float crystalDur;
 
+
+    [Header("Explosive Crystal")]
+    [SerializeField] UI_Skilltree_Slot explosiveCrystalUnlockBtn;
     [SerializeField]bool canExplode;
 
 
+    [Header("Crystal mirage")]
+    [SerializeField] UI_Skilltree_Slot unlockCloneInsteadBtn;
     [SerializeField] bool createCloneInsteadOfCrystal;
 
+    [Header("Crystal Simple")]
+    [SerializeField] UI_Skilltree_Slot unlockCrystalBtn;
+    public bool crystalUnlocked { get; private set; }
 
+
+
+
+    [Header("Moving Crystal")]
+
+    [SerializeField] UI_Skilltree_Slot movingCrystalUnlockBtn;
    [SerializeField] bool canMove;
    [SerializeField] float moveSpeed;
 
     [Header("multi crystal")]
+    [SerializeField] UI_Skilltree_Slot multiCrystalUnlockBtn;
     [SerializeField] bool canUseMultiCrystal; 
     [SerializeField] int amountOfGem;
     [SerializeField] float coolDowngem;
     [SerializeField] float useTimeWindow;
     [SerializeField] List<GameObject> crystalleft = new List<GameObject>();
 
+
+    protected override void Start()
+    {
+        base.Start();
+
+
+        unlockCrystalBtn.GetComponent<Button>().onClick.AddListener(UnlockCrystal);
+        movingCrystalUnlockBtn.GetComponent<Button>().onClick.AddListener(MovingCry);
+        multiCrystalUnlockBtn.GetComponent<Button>().onClick.AddListener(UnlockMulti);
+        explosiveCrystalUnlockBtn.GetComponent<Button>().onClick.AddListener(explosiveCrystal);
+        unlockCloneInsteadBtn.GetComponent<Button>().onClick.AddListener(CloneCrystal);
+
+
+
+    }
+
+    #region unlockBtn
+    private void UnlockCrystal()
+    {
+        if(unlockCrystalBtn.unlocked)
+        {
+            crystalUnlocked = true;
+        }
+    }
+
+
+    private void UnlockMulti()
+    {
+        if(multiCrystalUnlockBtn.unlocked)
+        {
+            canUseMultiCrystal = true;
+
+
+        }
+    }
+
+
+    private void MovingCry()
+    {
+        if (movingCrystalUnlockBtn.unlocked)
+        {
+            canMove = true;
+        }
+    }
+
+    private void explosiveCrystal()
+    {
+        if (explosiveCrystalUnlockBtn.unlocked)
+        {
+          canExplode = true;
+
+        }
+
+    }
+
+    private void CloneCrystal()
+    {
+        if(unlockCloneInsteadBtn.unlocked)
+        {
+            createCloneInsteadOfCrystal = true;
+        }
+    }
+
+    #endregion
     public override void UseSkill()
     {
         base.UseSkill();
