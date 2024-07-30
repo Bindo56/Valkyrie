@@ -1,9 +1,9 @@
  Valkyrie
  Action_Adventure Game 
 
- Sword that can return to the player 
- Charachter can create multiple clone to fool the enemy 
- Charachter can throw Gem-Bomb & Lighting to the enemy 
+ Sword that can return to the player - 
+ Charachter can create multiple clone to fool the enemy - 
+ Charachter can throw Gem-Bomb & Lighting to the enemy -
 
 https://github.com/user-attachments/assets/5cd48fce-87b6-4dc2-a3d8-d843c54eff6a
 
