@@ -1,4 +1,7 @@
- Valkyrie
+# Valkyrie
+
+See the [setup guide](SETUP.md) for the Unity version and first-run steps.
+
  Action_Adventure Game 
 
  Sword that can return to the player - 
